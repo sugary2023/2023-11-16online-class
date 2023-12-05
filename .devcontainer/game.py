@@ -1,6 +1,6 @@
 import pyinputplus as pyip
 import random
-min = 0
+min = 1
 max = 100
 count = 0
 random_number=random.randint(min,max)
@@ -15,8 +15,13 @@ while True:
         break
     elif keyin > random_number:
         print("再小一點")
+        max = keyin - 1
     elif keyin < random_number:
         print("再大一點")
         min = keyin + 1
-    print(f"您已經猜了{count}次")        
-print("遊戲結束")    
+    print(f"您已經猜了{count}次")   
+    print("============")     
+    is_cotinue=pyip.inputYesNo("請問還要再一次嗎?(yes,no)")
+    if is_cotinue != "yes" :
+        break
+print("遊戲結束")  
